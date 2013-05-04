@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB7BF4B2-2DE9-4863-AA74-208C579206E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Nonagon.Modular.Cms</RootNamespace>
+    <AssemblyName>Nonagon.Modular.Cms</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite">
+      <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Content.cs" />
+    <Compile Include="IContent.cs" />
+    <Compile Include="ContentStatus.cs" />
+    <Compile Include="ContentRevision.cs" />
+    <Compile Include="IContentRevision.cs" />
+    <Compile Include="Operations\GetContentsOperation.cs" />
+    <Compile Include="Operations\GetContentDetailsOperation.cs" />
+    <Compile Include="Operations\DeleteContentOperation.cs" />
+    <Compile Include="Operations\StoreContentOperation.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Nonagon\Nonagon.csproj">
+      <Project>{416A413E-FA2F-4547-BD9F-01C759BD7077}</Project>
+      <Name>Nonagon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nonagon.Modular\Nonagon.Modular.csproj">
+      <Project>{D9CCF0E7-FD49-4F69-85E2-082115AFE9BD}</Project>
+      <Name>Nonagon.Modular</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Operations\" />
+  </ItemGroup>
+</Project>
