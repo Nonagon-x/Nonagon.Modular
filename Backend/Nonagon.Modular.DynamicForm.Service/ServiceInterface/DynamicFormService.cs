@@ -10,12 +10,9 @@ namespace Nonagon.Modular.DynamicForm.Service.ServiceInterface
 		public Object Get(GetForms param)
 		{
 			if(param == null)
-				throw new ArgumentNullException("param");
+				throw new ArgumentException("param");
 			
-			var skip = param.Skip;
-			var take = param.Take;
-			
-			return dynamicFormInterface.GetForms(skip, take);
+			return dynamicFormInterface.GetForms(param);
 		}
 		
 		public Object Get(GetFormDetails param)
@@ -23,12 +20,15 @@ namespace Nonagon.Modular.DynamicForm.Service.ServiceInterface
 			if(param == null)
 				throw new ArgumentException("param");
 			
-			if(param.Version == null) 
-			{
-				return dynamicFormInterface.GetFormDetails(param.FormId);
-			}
-			
-			return dynamicFormInterface.GetFormDetails(param.FormId, param.Version.Value);
+			return dynamicFormInterface.GetFormDetails(param);
+		}
+
+		public Object Get(GetFormInstanceDetails param)
+		{
+			if(param == null)
+				throw new ArgumentException("param");
+
+			return dynamicFormInterface.GetFormInstanceDetails(param);
 		}
 		
 		public Object Post(StoreForm param)
@@ -36,7 +36,15 @@ namespace Nonagon.Modular.DynamicForm.Service.ServiceInterface
 			if(param == null)
 				throw new ArgumentException("param");
 			
-			return dynamicFormInterface.StoreForm(param.Form);
+			return dynamicFormInterface.StoreForm(param);
+		}
+
+		public Object Post(StoreFormInstance param)
+		{
+			if(param == null)
+				throw new ArgumentException("param");
+
+			return dynamicFormInterface.StoreFormInstance(param);
 		}
 
 		public Object Delete(DeleteForm param)
@@ -44,7 +52,15 @@ namespace Nonagon.Modular.DynamicForm.Service.ServiceInterface
 			if(param == null)
 				throw new ArgumentException("param");
 
-			return dynamicFormInterface.DeleteForm(param.FormId);
+			return dynamicFormInterface.DeleteForm(param);
+		}
+
+		public Object Delete(DeleteFormInstace param)
+		{
+			if(param == null)
+				throw new ArgumentException("param");
+			
+			return dynamicFormInterface.DeleteFormInstance(param);
 		}
 	}
 }

@@ -1,10 +1,7 @@
-using System;
+using Nonagon.Modular.DynamicForm.Operations;
 
 namespace Nonagon.Modular.DynamicForm.Service
 {
-	public class DeleteForm
-	{
-		public Int64 FormId { get; set; }
-	}
+	public class DeleteForm : DeleteFormOperation.Param {}
 }
 

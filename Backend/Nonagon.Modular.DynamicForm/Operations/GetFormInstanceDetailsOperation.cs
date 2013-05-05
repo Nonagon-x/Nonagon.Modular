@@ -8,28 +8,37 @@ namespace Nonagon.Modular.DynamicForm.Operations
 	/// <summary>
 	/// Get form instance details operation.
 	/// </summary>
-	public class GetFormInstanceDetailsOperation : DataModuleOperation<Int64, FormInstance>
+	public class GetFormInstanceDetailsOperation : 
+		DataModuleOperation<GetFormInstanceDetailsOperation.Param, FormInstance>
 	{
 		/// <summary>
-		/// Execute this operation with input parameter.
+		/// GetFormInstanceDetailsOperation parameter.
 		/// </summary>
-		/// <param name="FormInstanceId">The Form instance identifier.</param>
-		public override FormInstance Execute(Int64 formInstanceId)
+		public class Param
+		{
+			/// <summary>
+			/// Gets or sets the form instance identifier.
+			/// </summary>
+			/// <value>The form instance identifier.</value>
+			public Int64 FormInstanceId { get; set; }
+		}
+
+		public override FormInstance Execute(Param param)
 		{
 			using(var dbConnection = DbConnectionFactory.OpenDbConnection())
 			{
-				var FormInstance = dbConnection.
+				var formInstance = dbConnection.
 					Select<FormInstance>(
-						q => q.Id == formInstanceId).FirstOrDefault();
+						q => q.Id == param.FormInstanceId).FirstOrDefault();
 
-				if(FormInstance != null) {
-					FormInstance.Values = dbConnection.
+				if(formInstance != null) {
+					formInstance.Values = dbConnection.
 						Select<FormInstanceValue>(
-							q => q.FormInstanceId == formInstanceId).
+							q => q.FormInstanceId == param.FormInstanceId).
 								Select(q => (FormInstanceValue)q);
 				}
 				
-				return FormInstance;
+				return formInstance;
 			}
 		}
 	}

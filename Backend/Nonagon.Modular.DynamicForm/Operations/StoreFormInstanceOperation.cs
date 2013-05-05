@@ -5,15 +5,36 @@ using ServiceStack.OrmLite;
 
 namespace Nonagon.Modular.DynamicForm.Operations
 {
-	public class StoreFormInstanceOperation : DataModuleOperation<FormInstance, FormInstance>
+	/// <summary>
+	/// The operation to store form instance.
+	/// </summary>
+	public class StoreFormInstanceOperation : DataModuleOperation<StoreFormInstanceOperation.Param, FormInstance>
 	{
-		public override FormInstance Execute(FormInstance formInstance)
+		/// <summary>
+		/// Store form instance parameter.
+		/// </summary>
+		public class Param
 		{
-			if(formInstance == null)
-				throw new ArgumentException("formInstance");
+			/// <summary>
+			/// Gets or sets the form instance.
+			/// </summary>
+			/// <value>The form instance.</value>
+			public FormInstance FormInstance { get; set; }
+		}
+
+		public override FormInstance Execute(Param param)
+		{
+			if(param == null)
+				throw new ArgumentException("param");
+
+			if(param.FormInstance == null)
+				throw new ArgumentException("param.FormInstance");
+
+			FormInstance formInstance = param.FormInstance;
 
 			// If this is the new Form.
-			if(formInstance.Id <= 0) {
+			if(formInstance.Id <= 0)
+			{
 				formInstance.CreatedDate = DateTime.UtcNow;
 				formInstance.Reference = Guid.NewGuid().ToString();
 				formInstance.Status = FormStatus.Inactive;

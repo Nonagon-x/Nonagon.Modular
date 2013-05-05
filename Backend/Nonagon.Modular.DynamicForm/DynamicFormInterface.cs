@@ -16,99 +16,93 @@ namespace Nonagon.Modular.DynamicForm
 			: base(dbConnectionFactory) { }
 
 		/// <summary>
-		/// Gets all Forms.
+		/// Gets all forms.
 		/// </summary>
-		/// <returns>The all Forms.</returns>
-		/// <param name="skip">Number of records to skip.</param>
-		/// <param name="take">Number of records to take.</param>
-		public IEnumerable<IForm> GetForms(Int32 skip, Int32 take)
+		/// <returns>The forms.</returns>
+		/// <param name="param">Parameter.</param>
+		public IEnumerable<IForm> GetForms(GetFormsOperation.Param param)
 		{
-			var param = new GetFormsOperation.Param() {
-				Skip = skip,
-				Take = take
-			};
-
 			return Resolve<GetFormsOperation>().Execute(param);
 		}
 
 		/// <summary>
-		/// Gets the current Form version.
+		/// Gets the current form version.
 		/// </summary>
-		/// <returns>The last active Form version.</returns>
-		/// <param name="FormId">Form identifier.</param>
-		public Int32 GetCurrentFormVersion(Int64 formId)
+		/// <returns>The current form version.</returns>
+		/// <param name="param">Parameter.</param>
+		public Int32 GetCurrentFormVersion(GetCurrentFormVersionOperation.Param param)
 		{
-			return Resolve<GetCurrentFormVersionOperation>().Execute(formId);
+			return Resolve<GetCurrentFormVersionOperation>().Execute(param);
 		}
 
 		/// <summary>
-		/// Gets the Form details of current Form version.
+		/// Gets the form details.
 		/// </summary>
-		/// <returns>The Form details.</returns>
-		/// <param name="FormId">Form identifier.</param>
-		public Form GetFormDetails(Int64 formId)
+		/// <returns>The form details.</returns>
+		/// <param name="param">Parameter.</param>
+		public Form GetFormDetails(GetFormDetailsOperation.Param param)
 		{
-			Int32 currentFormVersion = Resolve<GetCurrentFormVersionOperation>().Execute(formId);
-			return Resolve<GetFormDetailsOperation>().Execute(
-				new GetFormDetailsOperation.Param() {
-					FormId = formId,
-					Version = currentFormVersion
-				});
+			if(param.Version == null)
+			{
+				Int32 currentFormVersion = Resolve<GetCurrentFormVersionOperation>().
+					Execute(new GetCurrentFormVersionOperation.Param {
+						FormId = param.FormId
+					});
+
+				param.Version = currentFormVersion;
+			}
+
+			return Resolve<GetFormDetailsOperation>().Execute(param);
 		}
 
 		/// <summary>
-		/// Gets the Form details from specified version.
+		/// Stores the form.
 		/// </summary>
-		/// <returns>The Form details.</returns>
-		/// <param name="FormId">Form identifier.</param>
-		/// <param name="version">Version.</param>
-		public Form GetFormDetails(Int64 formId, Int32 version)
+		/// <returns>The form.</returns>
+		/// <param name="param">Parameter.</param>
+		public Form StoreForm(StoreFormOperation.Param param)
 		{
-			return Resolve<GetFormDetailsOperation>().Execute(
-				new GetFormDetailsOperation.Param() {
-				FormId = formId,
-				Version = version
-			});
+			return Resolve<StoreFormOperation>().Execute(param);
 		}
 
 		/// <summary>
-		/// Stores the Form.
+		/// Deletes the form.
 		/// </summary>
-		/// <returns>The Form.</returns>
-		/// <param name="FormDetails">Form details.</param>
-		public Form StoreForm(Form formDetails)
+		/// <returns>The number of record affected.</returns>
+		/// <param name="param">Parameter.</param>
+		public Int32 DeleteForm(DeleteFormOperation.Param param)
 		{
-			return Resolve<StoreFormOperation>().Execute(formDetails);
+			return Resolve<DeleteFormOperation>().Execute(param);
 		}
 
 		/// <summary>
-		/// Deletes the Form.
+		/// Stores the form instance.
 		/// </summary>
-		/// <returns>The Form.</returns>
-		/// <param name="FormId">Form identifier.</param>
-		public Int32 DeleteForm(Int64 formId)
+		/// <returns>The form instance.</returns>
+		/// <param name="param">Parameter.</param>
+		public FormInstance StoreFormInstance(StoreFormInstanceOperation.Param param)
 		{
-			return Resolve<DeleteFormOperation>().Execute(formId);
+			return Resolve<StoreFormInstanceOperation>().Execute(param);
 		}
 
 		/// <summary>
-		/// Stores the Form instance.
+		/// Gets the form instance details.
 		/// </summary>
-		/// <returns>The Form instance.</returns>
-		/// <param name="FormInstance">Form instance.</param>
-		public FormInstance StoreFormInstance(FormInstance formInstance)
+		/// <returns>The form instance details.</returns>
+		/// <param name="param">Parameter.</param>
+		public FormInstance GetFormInstanceDetails(GetFormInstanceDetailsOperation.Param param)
 		{
-			return Resolve<StoreFormInstanceOperation>().Execute(formInstance);
+			return Resolve<GetFormInstanceDetailsOperation>().Execute(param);
 		}
 
 		/// <summary>
-		/// Gets the Form instance details.
+		/// Deletes the form instance.
 		/// </summary>
-		/// <returns>The Form instance details.</returns>
-		/// <param name="FormInstanceId">Form instance identifier.</param>
-		public FormInstance GetFormInstanceDetails(Int64 formInstanceId)
+		/// <returns>The number of record affected.</returns>
+		/// <param name="param">Parameter.</param>
+		public Int32 DeleteFormInstance(DeleteFormInstanceOperation.Param param)
 		{
-			return Resolve<GetFormInstanceDetailsOperation>().Execute(formInstanceId);
+			return Resolve<DeleteFormInstanceOperation>().Execute(param);
 		}
 	}
 }

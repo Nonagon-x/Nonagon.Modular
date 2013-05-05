@@ -1,10 +1,7 @@
-using Nonagon.Modular.DynamicForm;
+using Nonagon.Modular.DynamicForm.Operations;
 
-namespace Nonagon.Modular.DynamicForm.Service
+namespace Nonagon.Modular.DynamicForm
 {
-	public class StoreForm
-	{
-		public Form Form { get; set; }
-	}
+	public class StoreForm : StoreFormOperation.Param {}
 }
 

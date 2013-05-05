@@ -8,19 +8,32 @@ namespace Nonagon.Modular.DynamicForm.Operations
 	/// <summary>
 	/// The operation to store the form.
 	/// </summary>
-	public class StoreFormOperation : DataModuleOperation<Form, Form>
+	public class StoreFormOperation : DataModuleOperation<StoreFormOperation.Param, Form>
 	{
 		/// <summary>
-		/// Execute this operation with input parameter.
+		/// Store form parameter.
 		/// </summary>
-		/// <param name="form">Form to be stored.</param>
-		public override Form Execute(Form form)
+		public class Param
 		{
-			if(form == null)
-				throw new ArgumentException("form");
+			/// <summary>
+			/// Gets or sets the form to be stored.
+			/// </summary>
+			/// <value>The form.</value>
+			public Form Form { get; set; }
+		}
 
-			if(form.Revision == null)
-				throw new ArgumentException("form.Revision");
+		public override Form Execute(Param param)
+		{
+			if(param == null)
+				throw new ArgumentException("param");
+
+			if(param.Form == null)
+				throw new ArgumentException("param.Form");
+
+			if(param.Form.Revision == null)
+				throw new ArgumentException("param.Form.Revision");
+
+			Form form = param.Form;
 
 			// If this is the new form.
 			if(form.Id <= 0) {

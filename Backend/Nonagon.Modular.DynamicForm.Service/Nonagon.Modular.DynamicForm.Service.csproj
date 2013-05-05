@@ -48,6 +48,9 @@
     <Compile Include="GetForms.cs" />
     <Compile Include="StoreForm.cs" />
     <Compile Include="DeleteForm.cs" />
+    <Compile Include="StoreFormInstance.cs" />
+    <Compile Include="GetFormInstanceDetails.cs" />
+    <Compile Include="DeleteFormInstace.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

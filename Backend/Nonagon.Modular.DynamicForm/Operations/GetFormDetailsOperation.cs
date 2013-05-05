@@ -25,13 +25,9 @@ namespace Nonagon.Modular.DynamicForm.Operations
 			/// Gets or sets the version.
 			/// </summary>
 			/// <value>The version.</value>
-			public Int32 Version { get; set; }
+			public Int32? Version { get; set; }
 		}
 
-		/// <summary>
-		/// Execute this operation with input parameter.
-		/// </summary>
-		/// <param name="input">The input parameter.</param>
 		public override Form Execute(Param input)
 		{
 			using(var dbConnection = DbConnectionFactory.OpenDbConnection())

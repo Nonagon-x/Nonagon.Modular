@@ -33,7 +33,7 @@ namespace Nonagon.Modular.Cms.Operations
 					Status = ContentStatus.Deleted,
 						LastUpdatedDate = DateTime.UtcNow
 					},
-					q => q.Id == contentId
+					q => q.ContentId == contentId
 				);
 			}
 			

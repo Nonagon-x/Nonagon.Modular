@@ -12,7 +12,7 @@ namespace Nonagon.Modular.DynamicForm.Operations
 	public class GetFormsOperation : DataModuleOperation<GetFormsOperation.Param, IEnumerable<IForm>>
 	{
 		/// <summary>
-		/// Get all Forms parameter.
+		/// Get all forms parameter.
 		/// </summary>
 		public class Param
 		{
@@ -29,10 +29,6 @@ namespace Nonagon.Modular.DynamicForm.Operations
 			public Int32 Take { get; set; }
 		}
 
-		/// <summary>
-		/// Execute this operation.
-		/// </summary>
-		/// <returns>List of Forms.</returns>
 		public override IEnumerable<IForm> Execute(Param param)
 		{
 			using(var dbConnection = DbConnectionFactory.OpenDbConnection())
