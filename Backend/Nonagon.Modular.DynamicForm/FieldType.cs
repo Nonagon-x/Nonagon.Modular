@@ -68,7 +68,12 @@ namespace Nonagon.Modular.DynamicForm
 		/// <summary>
 		/// The date and time picker.
 		/// </summary>
-		DateTimePicker
+		DateTimePicker,
+
+		/// <summary>
+		/// The picture field.
+		/// </summary>
+		Picture
 	}
 }
 

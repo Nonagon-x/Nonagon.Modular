@@ -1,18 +1,16 @@
-using System;
-
-namespace Nonagon.Modular.DynamicForm.FieldAttributes
+namespace Nonagon.Modular.DynamicForm
 {
 	/// <summary>
-	/// URL field attribute.
+	/// Picture field attribute.
 	/// </summary>
-	public class UrlFieldAttribute : IFieldAttribute
+	public class PictureFieldAttribute : IFieldAttribute
 	{
 		/// <summary>
 		/// Gets the type of the field.
 		/// </summary>
 		/// <value>The type of the field.</value>
 		public FieldType SupportedFieldType {
-			get { return FieldType.Url; }
+			get { return FieldType.Picture; }
 		}
 	}
 }
