@@ -25,7 +25,7 @@ namespace Nonagon.Modular.Cms.Operations
 			/// Gets or sets the version.
 			/// </summary>
 			/// <value>The version.</value>
-			public Int32 Version { get; set; }
+			public Int32? Version { get; set; }
 		}
 		
 		/// <summary>
@@ -36,7 +36,7 @@ namespace Nonagon.Modular.Cms.Operations
 		{
 			using(var dbConnection = DbConnectionFactory.OpenDbConnection())
 			{
-				var form =
+				var content =
 					dbConnection.FirstOrDefault<Content>(q => q.Id == input.ContentId);
 				
 				var contentRevision = 
@@ -45,10 +45,10 @@ namespace Nonagon.Modular.Cms.Operations
 				
 				if(contentRevision != null) {
 					
-					form.Revision = contentRevision;
+					content.Revision = contentRevision;
 				}
 				
-				return form;
+				return content;
 			}
 		}
 	}

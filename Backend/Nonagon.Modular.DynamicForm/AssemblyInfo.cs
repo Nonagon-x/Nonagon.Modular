@@ -8,8 +8,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Nonagon Co., Ltd.")]
-[assembly: AssemblyProduct("DynamicForm")]
-[assembly: AssemblyCopyright("Copyright © Nonagon Co., Ltd 2013")]
+[assembly: AssemblyProduct("Dynamic Form")]
+[assembly: AssemblyCopyright("Copyright © Nonagon Co., Ltd. 2013")]
 [assembly: AssemblyTrademark("Nonagon Modular")]
 [assembly: AssemblyCulture("")]
 

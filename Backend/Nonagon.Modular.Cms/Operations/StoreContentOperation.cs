@@ -7,19 +7,36 @@ namespace Nonagon.Modular.Cms.Operations
 	/// <summary>
 	/// The operation to store the content.
 	/// </summary>
-	public class StoreContentOperation : DataModuleOperation<Content, Content>
+	public class StoreContentOperation : DataModuleOperation<StoreContentOperation.Param, Content>
 	{
+		/// <summary>
+		/// Store content parameter.
+		/// </summary>
+		public class Param
+		{
+			/// <summary>
+			/// Gets or sets the content to be stored.
+			/// </summary>
+			/// <value>The content.</value>
+			public Content Content { get; set; }
+		}
+
 		/// <summary>
 		/// Execute this operation with input parameter.
 		/// </summary>
 		/// <param name="content">Content to be stored.</param>
-		public override Content Execute(Content content)
+		public override Content Execute(Param param)
 		{
-			if(content == null)
-				throw new ArgumentException("content");
+			if(param == null)
+				throw new ArgumentException("param");
+
+			if(param.Content == null)
+				throw new ArgumentException("param.Content");
 			
-			if(content.Revision == null)
-				throw new ArgumentException("content.Revision");
+			if(param.Content.Revision == null)
+				throw new ArgumentException("param.Content.Revision");
+
+			Content content = param.Content;
 			
 			// If this is the new content.
 			if(content.Id <= 0) {

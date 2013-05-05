@@ -48,10 +48,12 @@
     <Compile Include="IDataModuleOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strings\LocalizedString.cs" />
+    <Compile Include="Params\ListOperationParam.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
     <Folder Include="Strings\" />
+    <Folder Include="Params\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

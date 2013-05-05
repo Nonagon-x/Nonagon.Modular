@@ -1,8 +1,10 @@
-using System;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Collections.Generic;
 
 using ServiceStack.OrmLite;
+
+using Nonagon.Modular.Params;
 
 namespace Nonagon.Modular.Cms.Operations
 {
@@ -14,21 +16,8 @@ namespace Nonagon.Modular.Cms.Operations
 		/// <summary>
 		/// Get all contents parameter.
 		/// </summary>
-		public class Param
-		{
-			/// <summary>
-			/// Gets or sets the number of records to skip.
-			/// </summary>
-			/// <value>The number of records to skip.</value>
-			public Int32 Skip { get; set; }
-			
-			/// <summary>
-			/// Gets or sets the number of records to take.
-			/// </summary>
-			/// <value>The number of records to take.</value>
-			public Int32 Take { get; set; }
-		}
-		
+		public class Param : ListOperationParam<Content> {}
+
 		/// <summary>
 		/// Execute this operation.
 		/// </summary>
@@ -40,10 +29,18 @@ namespace Nonagon.Modular.Cms.Operations
 				var ev = OrmLiteConfig.DialectProvider.ExpressionVisitor<Content>();
 				
 				ev.Where(q => q.Status == ContentStatus.Active);
-				
-				if(param != null)
+
+				if(param != null) {
+					
+					if(param.Predicate != null) {
+						
+						ev.Where(param.Predicate);
+					}
+					
+					ev.OrderByExpression = param.OrderBy;
 					ev.Limit(param.Skip, param.Take);
-				
+				}
+
 				return dbConnection.Select<Content>(ev);
 			}
 		}
