@@ -45,6 +45,12 @@ namespace Nonagon.Modular.Media
 		/// </summary>
 		/// <value>The last updated date.</value>
 		DateTime LastUpdatedDate { get; }
+
+		/// <summary>
+		/// Gets the status.
+		/// </summary>
+		/// <value>The status.</value>
+		MediaStatus Status { get; }
 	}
 }
 
