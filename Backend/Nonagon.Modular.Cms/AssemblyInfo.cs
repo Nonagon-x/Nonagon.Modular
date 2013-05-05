@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Nonagon Co., Ltd.")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("(C) Nonagon Co., Ltd.")]
+[assembly: AssemblyCopyright("Copyright © Nonagon Co., Ltd. 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
