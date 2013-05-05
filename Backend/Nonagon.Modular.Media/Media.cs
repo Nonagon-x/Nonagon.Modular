@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 using ServiceStack.DesignPatterns.Model;
 using ServiceStack.DataAnnotations;
+using Nonagon.Modular.Strings;
 
 namespace Nonagon.Modular.Media
 {
@@ -18,6 +19,14 @@ namespace Nonagon.Modular.Media
 		[AutoIncrement]
 		[Alias("MediaID")]
 		public Int64 Id { get; set; }
+
+		/// <summary>
+		/// Gets or sets the reference.
+		/// </summary>
+		/// <value>The reference.</value>
+		[Required]
+		[StringLength(64)]
+		public String Reference { get; set; }
 
 		/// <summary>
 		/// Gets or sets the name.
@@ -46,8 +55,8 @@ namespace Nonagon.Modular.Media
 		/// Gets or sets the description.
 		/// </summary>
 		/// <value>The description.</value>
-		[StringLength(255)]
-		public String Description { get; set; }
+		[StringLength(800)]
+		public LocalizedString Description { get; set; }
 
 		/// <summary>
 		/// Gets or sets the tag.

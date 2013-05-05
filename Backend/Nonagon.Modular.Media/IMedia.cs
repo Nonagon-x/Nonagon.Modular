@@ -1,4 +1,5 @@
 using System;
+using Nonagon.Modular.Strings;
 
 namespace Nonagon.Modular.Media
 {
@@ -26,7 +27,7 @@ namespace Nonagon.Modular.Media
 		/// Gets or sets the description.
 		/// </summary>
 		/// <value>The description.</value>
-		String Description { get; set; }
+		LocalizedString Description { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the tag.

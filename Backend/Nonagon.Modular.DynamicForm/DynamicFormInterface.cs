@@ -36,9 +36,9 @@ namespace Nonagon.Modular.DynamicForm
 		/// </summary>
 		/// <returns>The last active Form version.</returns>
 		/// <param name="FormId">Form identifier.</param>
-		public Int32 GetCurrentFormVersion(Int64 FormId)
+		public Int32 GetCurrentFormVersion(Int64 formId)
 		{
-			return Resolve<GetCurrentFormVersionOperation>().Execute(FormId);
+			return Resolve<GetCurrentFormVersionOperation>().Execute(formId);
 		}
 
 		/// <summary>
@@ -46,12 +46,12 @@ namespace Nonagon.Modular.DynamicForm
 		/// </summary>
 		/// <returns>The Form details.</returns>
 		/// <param name="FormId">Form identifier.</param>
-		public Form GetFormDetails(Int64 FormId)
+		public Form GetFormDetails(Int64 formId)
 		{
-			Int32 currentFormVersion = Resolve<GetCurrentFormVersionOperation>().Execute(FormId);
+			Int32 currentFormVersion = Resolve<GetCurrentFormVersionOperation>().Execute(formId);
 			return Resolve<GetFormDetailsOperation>().Execute(
 				new GetFormDetailsOperation.Param() {
-					FormId = FormId,
+					FormId = formId,
 					Version = currentFormVersion
 				});
 		}
@@ -62,11 +62,11 @@ namespace Nonagon.Modular.DynamicForm
 		/// <returns>The Form details.</returns>
 		/// <param name="FormId">Form identifier.</param>
 		/// <param name="version">Version.</param>
-		public Form GetFormDetails(Int64 FormId, Int32 version)
+		public Form GetFormDetails(Int64 formId, Int32 version)
 		{
 			return Resolve<GetFormDetailsOperation>().Execute(
 				new GetFormDetailsOperation.Param() {
-				FormId = FormId,
+				FormId = formId,
 				Version = version
 			});
 		}
@@ -76,9 +76,9 @@ namespace Nonagon.Modular.DynamicForm
 		/// </summary>
 		/// <returns>The Form.</returns>
 		/// <param name="FormDetails">Form details.</param>
-		public Form StoreForm(Form FormDetails)
+		public Form StoreForm(Form formDetails)
 		{
-			return Resolve<StoreFormOperation>().Execute(FormDetails);
+			return Resolve<StoreFormOperation>().Execute(formDetails);
 		}
 
 		/// <summary>
@@ -86,9 +86,9 @@ namespace Nonagon.Modular.DynamicForm
 		/// </summary>
 		/// <returns>The Form.</returns>
 		/// <param name="FormId">Form identifier.</param>
-		public Int32 DeleteForm(Int64 FormId)
+		public Int32 DeleteForm(Int64 formId)
 		{
-			return Resolve<DeleteFormOperation>().Execute(FormId);
+			return Resolve<DeleteFormOperation>().Execute(formId);
 		}
 
 		/// <summary>
@@ -96,9 +96,9 @@ namespace Nonagon.Modular.DynamicForm
 		/// </summary>
 		/// <returns>The Form instance.</returns>
 		/// <param name="FormInstance">Form instance.</param>
-		public FormInstance StoreFormInstance(FormInstance FormInstance)
+		public FormInstance StoreFormInstance(FormInstance formInstance)
 		{
-			return Resolve<StoreFormInstanceOperation>().Execute(FormInstance);
+			return Resolve<StoreFormInstanceOperation>().Execute(formInstance);
 		}
 
 		/// <summary>
@@ -106,9 +106,9 @@ namespace Nonagon.Modular.DynamicForm
 		/// </summary>
 		/// <returns>The Form instance details.</returns>
 		/// <param name="FormInstanceId">Form instance identifier.</param>
-		public FormInstance GetFormInstanceDetails(Int64 FormInstanceId)
+		public FormInstance GetFormInstanceDetails(Int64 formInstanceId)
 		{
-			return Resolve<GetFormInstanceDetailsOperation>().Execute(FormInstanceId);
+			return Resolve<GetFormInstanceDetailsOperation>().Execute(formInstanceId);
 		}
 	}
 }

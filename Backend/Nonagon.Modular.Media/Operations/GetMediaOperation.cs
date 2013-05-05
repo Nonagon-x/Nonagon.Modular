@@ -1,18 +1,17 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
 
 using ServiceStack.OrmLite;
 
-namespace Nonagon.Modular.Cms.Operations
+namespace Nonagon.Modular.Media.Operations
 {
 	/// <summary>
-	/// Get all contents operation.
+	/// Get all media operation.
 	/// </summary>
-	public class GetContentsOperation : DataModuleOperation<GetContentsOperation.Param, IEnumerable<IContent>>
+	public class GetMediaOperation : DataModuleOperation<GetMediaOperation.Param, IEnumerable<IMedia>>
 	{
 		/// <summary>
-		/// Get all contents parameter.
+		/// Get all media parameter.
 		/// </summary>
 		public class Param
 		{
@@ -33,20 +32,19 @@ namespace Nonagon.Modular.Cms.Operations
 		/// Execute this operation.
 		/// </summary>
 		/// <returns>List of forms.</returns>
-		public override IEnumerable<IContent> Execute(Param param)
+		public override IEnumerable<IMedia> Execute(Param param)
 		{
 			using(var dbConnection = DbConnectionFactory.OpenDbConnection())
 			{
-				var ev = OrmLiteConfig.DialectProvider.ExpressionVisitor<Content>();
+				var ev = OrmLiteConfig.DialectProvider.ExpressionVisitor<Media>();
 				
-				ev.Where(q => q.Status == ContentStatus.Active);
+				ev.Where(q => q.Status == MediaStatus.Available);
 				
 				if(param != null)
 					ev.Limit(param.Skip, param.Take);
 				
-				return dbConnection.Select<Content>(ev);
+				return dbConnection.Select<Media>(ev);
 			}
 		}
 	}
 }
-

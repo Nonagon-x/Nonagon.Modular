@@ -5,10 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>12.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E217A9DD-F13C-441D-B882-AFF446D8B759}</ProjectGuid>
+    <ProjectGuid>{4FDAC1B4-580D-4388-B7FC-7D55F529A942}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Nonagon.Modular.Media</RootNamespace>
-    <AssemblyName>Nonagon.Modular.Media</AssemblyName>
+    <RootNamespace>Nonagon.Modular.DynamicForm.Service</RootNamespace>
+    <AssemblyName>Nonagon.Modular.DynamicForm.Service</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -30,36 +31,40 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="ServiceStack.Interfaces">
-      <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.Interfaces.dll</HintPath>
+    <Reference Include="ServiceStack.ServiceInterface">
+      <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack">
+      <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.OrmLite">
       <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.OrmLite.dll</HintPath>
     </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Media.cs" />
-    <Compile Include="IMedia.cs" />
-    <Compile Include="MediaStatus.cs" />
-    <Compile Include="Operations\StoreMediaOperation.cs" />
-    <Compile Include="Operations\DeleteMediaOperation.cs" />
-    <Compile Include="Operations\GetMediaOperation.cs" />
-    <Compile Include="Operations\GetPhysicalDataOperation.cs" />
+    <Compile Include="ServiceInterface\DynamicFormService.cs" />
+    <Compile Include="GetFormDetails.cs" />
+    <Compile Include="GetForms.cs" />
+    <Compile Include="StoreForm.cs" />
+    <Compile Include="DeleteForm.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Operations\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Nonagon.Modular\Nonagon.Modular.csproj">
-      <Project>{D9CCF0E7-FD49-4F69-85E2-082115AFE9BD}</Project>
-      <Name>Nonagon.Modular</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Foundation\Mono\Nonagon\Nonagon.csproj">
       <Project>{416A413E-FA2F-4547-BD9F-01C759BD7077}</Project>
       <Name>Nonagon</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nonagon.Modular\Nonagon.Modular.csproj">
+      <Project>{D9CCF0E7-FD49-4F69-85E2-082115AFE9BD}</Project>
+      <Name>Nonagon.Modular</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nonagon.Modular.DynamicForm\Nonagon.Modular.DynamicForm.csproj">
+      <Project>{89958056-46C2-40E5-A064-EB3D1F983A69}</Project>
+      <Name>Nonagon.Modular.DynamicForm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ServiceInterface\" />
   </ItemGroup>
 </Project>

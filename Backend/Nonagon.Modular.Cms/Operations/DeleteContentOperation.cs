@@ -5,14 +5,14 @@ using ServiceStack.OrmLite;
 namespace Nonagon.Modular.Cms.Operations
 {
 	/// <summary>
-	/// Delete form operation.
+	/// Delete content operation.
 	/// </summary>
 	public class DeleteContentOperation : DataModuleOperation<Int64, Int32>
 	{
 		/// <summary>
-		/// Execute delete form operation.
+		/// Execute delete content operation.
 		/// </summary>
-		/// <param name="contentId">Form identifier.</param>
+		/// <param name="contentId">Content identifier.</param>
 		/// <returns>The number of records affected by the delete.</returns>
 		public override Int32 Execute(Int64 contentId)
 		{
