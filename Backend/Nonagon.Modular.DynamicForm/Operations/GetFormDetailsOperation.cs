@@ -32,25 +32,25 @@ namespace Nonagon.Modular.DynamicForm.Operations
 		{
 			using(var dbConnection = DbConnectionFactory.OpenDbConnection())
 			{
-				var Form =
+				var form =
 					dbConnection.FirstOrDefault<Form>(q => q.Id == input.FormId);
 
-				var FormRevision = 
+				var formRevision = 
 					dbConnection.FirstOrDefault<FormRevision>(
 						q => q.FormId == input.FormId && q.Version == input.Version);
 
-				if(FormRevision != null) {
+				if(formRevision != null) {
 
-					Form.Revision = FormRevision;
+					form.Revision = formRevision;
 
-					var FormFields =
+					var formFields =
 						dbConnection.Select<FormField>(
-							q => q.FormRevisionId == FormRevision.Id);
+							q => q.FormRevisionId == formRevision.Id);
 					
-					FormRevision.Fields = FormFields.Select(q => (FormField)q);
+					formRevision.Fields = formFields.Select(q => (FormField)q);
 				}
 
-				return Form;
+				return form;
 			}
 		}
 	}

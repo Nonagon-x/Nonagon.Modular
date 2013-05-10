@@ -17,6 +17,17 @@ namespace Nonagon.Modular
 		/// Initialize this instance.
 		/// </summary>
 		void Initialize();
+
+		/// <summary>
+		/// Determines whether this module is up to date.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is up to date; otherwise, <c>false</c>.</returns>
+		Boolean IsUpToDate();
+
+		/// <summary>
+		/// Update this module.
+		/// </summary>
+		void Update();
 	}
 
 	/// <summary>

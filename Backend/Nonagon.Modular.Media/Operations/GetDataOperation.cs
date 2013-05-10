@@ -7,7 +7,7 @@ namespace Nonagon.Modular.Media.Operations
 	/// <summary>
 	/// Get physical data operation.
 	/// </summary>
-	public class GetPhysicalDataOperation : DataModuleOperation<GetPhysicalDataOperation.Param, Byte[]>
+	public class GetDataOperation : DataModuleOperation<GetDataOperation.Param, Byte[]>
 	{
 		/// <summary>
 		/// GetPhysicalDataOperation parameter.

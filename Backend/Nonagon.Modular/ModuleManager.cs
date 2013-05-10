@@ -72,6 +72,9 @@ namespace Nonagon.Modular
 			if(!module.IsInitialized())
 				module.Initialize();
 
+			if(!module.IsUpToDate())
+				module.Update();
+
 			// Put the created module to be referenced as singleton.
 			_loadedModules[typeof(T)] = module;
 
