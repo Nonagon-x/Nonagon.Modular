@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using ServiceStack.OrmLite;
 
 using Nonagon.Modular.Params;
+using System;
 
 namespace Nonagon.Modular.Cms.Operations
 {
@@ -41,7 +42,24 @@ namespace Nonagon.Modular.Cms.Operations
 					ev.Limit(param.Skip, param.Take);
 				}
 
-				return dbConnection.Select<Content>(ev);
+				return dbConnection.Select<Content>(ev).Select(c => (IContent)c);;
+			}
+		}
+
+		/// <summary>
+		/// Gets the default parameter.
+		/// </summary>
+		/// <value>The default parameter.</value>
+		public static Param DefaultParam
+		{
+			get
+			{
+				var param = new Param {
+					Skip = 0,
+					Take = Int32.MaxValue
+				};
+
+				return param;
 			}
 		}
 	}

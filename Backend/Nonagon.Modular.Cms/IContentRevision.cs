@@ -31,7 +31,7 @@ namespace Nonagon.Modular.Cms
 		/// Gets or sets the text.
 		/// </summary>
 		/// <value>The text.</value>
-		LocalizedString Text { get; set; }
+		LocalizedString BodyText { get; set; }
 
 		/// <summary>
 		/// Gets the created date.

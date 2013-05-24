@@ -42,7 +42,6 @@ namespace Nonagon.Modular.Cms.Operations
 			if(content.Id <= 0) {
 				content.CreatedDate = DateTime.UtcNow;
 				content.Reference = Guid.NewGuid().ToString();
-				content.Status = ContentStatus.Inactive;
 			}
 			
 			content.LastUpdatedDate = DateTime.UtcNow;
@@ -65,12 +64,14 @@ namespace Nonagon.Modular.Cms.Operations
 					// Insert or update ContentRevision table depending on if Id presented.
 					content.Revision.ContentId = content.Id;
 					content.Revision.LastUpdatedDate = content.LastUpdatedDate;
+
+					// TODO: The keyword extractor is necessary here.
+					content.Revision.Keywords = "";
 					
 					if(content.Revision.Id <= 0)
 					{
 						content.Revision.CreatedDate = DateTime.Now;
-						content.Status = ContentStatus.Inactive;
-						
+
 						dbConnection.Insert(content.Revision);
 						content.Revision.Id = dbConnection.GetLastInsertId();
 					}

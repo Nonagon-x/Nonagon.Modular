@@ -36,13 +36,18 @@ namespace Nonagon.Modular.Cms
 		/// <value>The version.</value>
 		[Required]
 		public Int32 Version { get; set; }
+
+		[Required]
+		[StringLength(1024)]
+		public LocalizedString TitleText { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the text.
 		/// </summary>
 		/// <value>The text.</value>
 		[Required]
-		public LocalizedString Text { get; set; }
+		[StringLength(7000)]
+		public LocalizedString BodyText { get; set; }
 		
 		/// <summary>
 		/// Gets the created date.

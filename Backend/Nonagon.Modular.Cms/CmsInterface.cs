@@ -45,7 +45,8 @@ namespace Nonagon.Modular.Cms
 			{
 				Int32 currentContentVersion = Resolve<GetCurrentContentVersionOperation>().
 					Execute(new GetCurrentContentVersionOperation.Param {
-						ContentId = param.ContentId
+						ContentId = param.ContentId,
+						Key = param.Key
 					});
 				
 				param.Version = currentContentVersion;

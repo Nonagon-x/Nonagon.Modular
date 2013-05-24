@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Linq.Expressions;
 
 using ServiceStack.OrmLite;
 
@@ -19,7 +20,13 @@ namespace Nonagon.Modular.Cms.Operations
 			/// Gets or sets the content identifier.
 			/// </summary>
 			/// <value>The content identifier.</value>
-			public Int64 ContentId { get; set; }
+			public Int64? ContentId { get; set; }
+
+			/// <summary>
+			/// Gets or sets the content key.
+			/// </summary>
+			/// <value>The content key.</value>
+			public String Key { get; set; }
 			
 			/// <summary>
 			/// Gets or sets the version.
@@ -32,16 +39,29 @@ namespace Nonagon.Modular.Cms.Operations
 		/// Execute this operation with input parameter.
 		/// </summary>
 		/// <param name="input">The input parameter.</param>
-		public override Content Execute(Param input)
+		public override Content Execute(Param param)
 		{
+			if(param.ContentId == null && param.Key == null)
+				throw(new ArgumentException("param.ContentId or param.Key"));
+
 			using(var dbConnection = DbConnectionFactory.OpenDbConnection())
 			{
+				Expression<Func<Content, Boolean>> predicate = null;
+
+				if(param.ContentId != null) {
+					predicate = q => q.Id == param.ContentId;
+				}
+
+				if(param.Key != null) {
+					predicate = q => q.Key == param.Key;
+				}
+
 				var content =
-					dbConnection.FirstOrDefault<Content>(q => q.Id == input.ContentId);
-				
+					dbConnection.FirstOrDefault<Content>(predicate);
+
 				var contentRevision = 
 					dbConnection.FirstOrDefault<ContentRevision>(
-						q => q.ContentId == input.ContentId && q.Version == input.Version);
+						q => q.ContentId == content.Id && q.Version == param.Version);
 				
 				if(contentRevision != null) {
 					

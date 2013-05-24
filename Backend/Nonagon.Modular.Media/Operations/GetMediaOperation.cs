@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 using ServiceStack.OrmLite;
@@ -43,7 +44,7 @@ namespace Nonagon.Modular.Media.Operations
 				if(param != null)
 					ev.Limit(param.Skip, param.Take);
 				
-				return dbConnection.Select<Media>(ev);
+				return dbConnection.Select<Media>(ev).Select(m => (IMedia)m);
 			}
 		}
 	}
