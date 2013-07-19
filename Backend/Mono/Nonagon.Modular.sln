@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nonagon.Modular", "Nonagon.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{F0940278-A1BD-46A4-8E4D-9AB14FEC8CB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nonagon", "..\..\..\Foundation\Mono\Nonagon\Nonagon.csproj", "{416A413E-FA2F-4547-BD9F-01C759BD7077}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nonagon", "..\..\..\..\Foundation\Mono\Nonagon\Nonagon.csproj", "{416A413E-FA2F-4547-BD9F-01C759BD7077}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
