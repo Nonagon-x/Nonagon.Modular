@@ -19,7 +19,7 @@ namespace Nonagon.Modular.DynamicForm
 		/// <value>The identifier.</value>
 		[AutoIncrement]
 		[Alias("FormRevisionID")]
-		public Int64 Id { get; internal set; }
+		public Int64 Id { get; set; }
 		
 		/// <summary>
 		/// Gets the Form identifier.
@@ -27,7 +27,7 @@ namespace Nonagon.Modular.DynamicForm
 		/// <value>The Form identifier.</value>
 		[Alias("FormID")]
 		[ForeignKey(typeof(Form), OnDelete = "CASCADE", OnUpdate = "CASCADE")]
-		public Int64 FormId { get; internal set; }
+		public Int64 FormId { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the version of revision.
@@ -35,12 +35,14 @@ namespace Nonagon.Modular.DynamicForm
 		/// <value>The version.</value>
 		[Required]
 		public Int32 Version { get; set; }
-		
+
+		[StringLength(Int32.MaxValue)]
+		public String Output { get; set; }
+
 		/// <summary>
 		/// Gets or sets the template of Form.
 		/// </summary>
 		/// <value>The template.</value>
-		[Required]
 		[StringLength(Int32.MaxValue)]
 		public FormTemplate Template { get; set; }
 		
@@ -49,14 +51,14 @@ namespace Nonagon.Modular.DynamicForm
 		/// </summary>
 		/// <value>The created date.</value>
 		[Required]
-		public DateTime CreatedDate { get; internal set; }
+		public DateTime CreatedDate { get; set; }
 		
 		/// <summary>
 		/// Gets the last updated date.
 		/// </summary>
 		/// <value>The last updated date.</value>
 		[Required]
-		public DateTime LastUpdatedDate { get; internal set; }
+		public DateTime LastUpdatedDate { get; set; }
 		
 		/// <summary>
 		/// Gets the status.

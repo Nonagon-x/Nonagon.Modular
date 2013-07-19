@@ -22,4 +22,7 @@ public class SingleCheckFieldAttribute extends FieldAttribute {
 	
 	public final native String getFieldValue()/*-{ return this.FieldValue; }-*/;
 	public final native void setFieldValue(String value)/*-{ this.FieldValue = value; }-*/;
+	
+	public final native String getGroupName()/*-{ return this.GroupName; }-*/;
+	public final native void setGroupName(String value)/*-{ this.GroupName = value; }-*/;
 }

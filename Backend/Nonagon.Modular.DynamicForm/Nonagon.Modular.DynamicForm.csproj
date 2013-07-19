@@ -102,6 +102,7 @@
     <Compile Include="FieldAttributes\UrlFieldAttribute.cs" />
     <Compile Include="FieldAttributes\PictureFieldAttribute.cs" />
     <Compile Include="Operations\DeleteFormInstanceOperation.cs" />
+    <Compile Include="SelectableItem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

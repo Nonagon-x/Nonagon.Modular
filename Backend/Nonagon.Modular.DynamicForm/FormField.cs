@@ -19,7 +19,7 @@ namespace Nonagon.Modular.DynamicForm
 		/// <value>The identifier.</value>
 		[AutoIncrement]
 		[Alias("FormFieldID")]
-		public Int64 Id { get; internal set; }
+		public Int64 Id { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the Form version identifier.

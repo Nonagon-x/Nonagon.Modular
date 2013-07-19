@@ -7,6 +7,9 @@ public enum FormLayoutOrientation {
 	
 	public static FormLayoutOrientation fromString(String value) {
 
+		if(value == null)
+			return Horizontal;
+		
 		return Enum.valueOf(FormLayoutOrientation.class, value);
 	}
 	

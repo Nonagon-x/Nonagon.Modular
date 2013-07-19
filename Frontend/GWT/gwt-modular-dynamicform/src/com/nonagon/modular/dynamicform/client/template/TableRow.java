@@ -1,7 +1,6 @@
 package com.nonagon.modular.dynamicform.client.template;
 
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.core.client.JsArray;
 
 public class TableRow extends FormElementGroup {
 	
@@ -19,7 +18,4 @@ public class TableRow extends FormElementGroup {
 	}-*/;
 
 	protected TableRow() {}
-	
-	public final native JsArray<TableCell> getChildren()/*-{ return this.Children; }-*/;
-	public final native void setChildren(JsArray<TableCell> value)/*-{ this.Children = value; }-*/;
 }

@@ -1,7 +1,6 @@
 package com.nonagon.modular.dynamicform.client.template;
 
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.core.client.JsArray;
 
 public class Table extends FormElementGroup {
 	
@@ -22,9 +21,6 @@ public class Table extends FormElementGroup {
 	
 	public final native boolean getHasBorders()/*-{ return this.HasBorders; }-*/;
 	public final native void sethasBorders(boolean value)/*-{ this.HasBorders = value; }-*/;
-	
-	public final native JsArray<TableRow> getChildren()/*-{ return this.Children; }-*/;
-	public final native void setChildren(JsArray<TableRow> value)/*-{ this.Children = value; }-*/;
 	
 	public final native int getColumnCount()/*-{ return this.ColumnCount; }-*/;
 	public final native void setColumnCount(int value)/*-{ this.ColumnCount = value; }-*/;

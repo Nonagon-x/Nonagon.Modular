@@ -15,33 +15,33 @@ public abstract class FormElement extends JavaScriptObject {
 	public final native FormLayoutThickness getPadding()/*-{ return this.Padding; }-*/;
 	public final native void getPadding(FormLayoutThickness value)/*-{ this.Padding = value; }-*/;
 
-	public final FormLayoutWidth getFieldLayoutWidth() {
+	public final FormLayoutWidth getWidth() {
 		
-		String fieldLayoutWidth = jsniGetFieldLayoutWidth();
+		String fieldLayoutWidth = jsniGetWidth();
 		return FormLayoutWidth.fromString(fieldLayoutWidth);
 	}
 	
-	public final void setFieldLayoutWidth(FormLayoutWidth width) {
+	public final void setWidth(FormLayoutWidth width) {
 		
 		String fieldLayoutWidth = FormLayoutWidth.fromEnum(width);
-		jsniSetFieldLayoutWidth(fieldLayoutWidth);
+		jsniSetWidth(fieldLayoutWidth);
 	}
 	
-	private final native String jsniGetFieldLayoutWidth()/*-{ return this.FieldLayoutWidth; }-*/;
-	private final native void jsniSetFieldLayoutWidth(String value)/*-{ this.FieldLayoutWidth = value; }-*/;
+	private final native String jsniGetWidth()/*-{ return this.Width; }-*/;
+	private final native void jsniSetWidth(String value)/*-{ this.Width = value; }-*/;
 	
-	public final FormLayoutHeight getFieldLayoutHeight() {
+	public final FormLayoutHeight getHeight() {
 		
-		String fieldLayoutHeight = jsniGetFieldLayoutHeight();
+		String fieldLayoutHeight = jsniGetHeight();
 		return FormLayoutHeight.fromString(fieldLayoutHeight);
 	}
 	
-	public final void setFieldLayoutHeight(FormLayoutHeight height) {
+	public final void setHeight(FormLayoutHeight height) {
 		
 		String fieldLayoutHeight = FormLayoutHeight.fromEnum(height);
-		jsniSetFieldLayoutHeight(fieldLayoutHeight);
+		jsniSetHeight(fieldLayoutHeight);
 	}
 	
-	private final native String jsniGetFieldLayoutHeight()/*-{ return this.FieldLayoutHeight; }-*/;
-	private final native void jsniSetFieldLayoutHeight(String value)/*-{ this.FieldLayoutHeight = value; }-*/;
+	private final native String jsniGetHeight()/*-{ return this.Height; }-*/;
+	private final native void jsniSetHeight(String value)/*-{ this.Height = value; }-*/;
 }

@@ -1,7 +1,5 @@
 package com.nonagon.modular.client.strings;
 
-import java.util.HashSet;
-
 import com.google.gwt.core.client.JavaScriptObject;
 
 public class LocalizedString extends JavaScriptObject {
@@ -23,6 +21,4 @@ public class LocalizedString extends JavaScriptObject {
 	
 	public final native String get(String culture)/*-{ return this[culture]; }-*/;
 	public final native void set(String culture, String value)/*-{ this[culture] = value; }-*/;
-	
-	public final native HashSet<String> getAllCultures()/*-{ return this; }-*/;
 }

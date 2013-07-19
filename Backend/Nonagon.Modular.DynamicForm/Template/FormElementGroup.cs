@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Nonagon.Modular.DynamicForm.Template
 {
 	/// <summary>
@@ -9,12 +11,18 @@ namespace Nonagon.Modular.DynamicForm.Template
 		/// Gets or sets the layout type this element will use.
 		/// </summary>
 		/// <value>The layout type.</value>
-		public FormLayoutType Layout { get; set; }
+		public FormLayoutType LayoutType { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the orientation.
 		/// </summary>
 		/// <value>The orientation.</value>
 		public FormLayoutOrientation Orientation { get; set; }
+		
+		/// <summary>
+		/// Gets or sets the list of <c>IFormElement</c>.
+		/// </summary>
+		/// <value>The children.</value>
+		public IEnumerable<IFormElement> Children { get; set; }
 	}
 }

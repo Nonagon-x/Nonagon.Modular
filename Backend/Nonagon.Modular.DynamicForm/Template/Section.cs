@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using Nonagon.Modular.Strings;
 
 namespace Nonagon.Modular.DynamicForm.Template
 {
@@ -8,10 +8,10 @@ namespace Nonagon.Modular.DynamicForm.Template
 	public class Section : FormElementGroup, IHasChildren
 	{
 		/// <summary>
-		/// Gets or sets the list of <c>IFormElement</c>.
+		/// Gets or sets the title of section.
 		/// </summary>
-		/// <value>The children.</value>
-		public IEnumerable<IFormElement> Children { get; set; }
+		/// <value>The title.</value>
+		public LocalizedString Title { get; set; }
 	}
 }
 

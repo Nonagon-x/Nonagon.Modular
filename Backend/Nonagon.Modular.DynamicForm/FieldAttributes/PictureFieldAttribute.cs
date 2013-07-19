@@ -1,4 +1,4 @@
-namespace Nonagon.Modular.DynamicForm
+namespace Nonagon.Modular.DynamicForm.FieldAttributes
 {
 	/// <summary>
 	/// Picture field attribute.

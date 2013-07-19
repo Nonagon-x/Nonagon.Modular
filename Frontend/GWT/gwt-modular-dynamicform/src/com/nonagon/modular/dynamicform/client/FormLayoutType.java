@@ -7,6 +7,9 @@ public enum FormLayoutType {
 	
 	public static FormLayoutType fromString(String value) {
 
+		if(value == null)
+			return LinearLayout;
+		
 		return Enum.valueOf(FormLayoutType.class, value);
 	}
 	

@@ -23,7 +23,7 @@ namespace Nonagon.Modular.DynamicForm.Operations
 			using(var dbConnection = DbConnectionFactory.OpenDbConnection())
 			{
 				var ev = OrmLiteConfig.DialectProvider.ExpressionVisitor<Form>();
-				ev.Where(q => q.Status == FormStatus.Active);
+				//ev.Where(q => q.Status == FormStatus.Active);
 
 				if(param != null) {
 

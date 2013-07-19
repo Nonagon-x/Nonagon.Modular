@@ -1,6 +1,6 @@
 using System;
 
-namespace Nonagon.Modular.DynamicForm
+namespace Nonagon.Modular.DynamicForm.FieldAttributes
 {
 	/// <summary>
 	/// Multiline text field attribute.

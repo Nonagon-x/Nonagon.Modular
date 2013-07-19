@@ -5,7 +5,6 @@ import java.util.Date;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 
-
 public class FormRevision extends JavaScriptObject {
 	
 	public static FormRevision create() {
@@ -26,17 +25,14 @@ public class FormRevision extends JavaScriptObject {
 	public final native Long getId()/*-{ return this.Id; }-*/;
 	public final native Long getFormId()/*-{ return this.FormId; }-*/;
 	
-	public final native Integer getVersion()/*-{ return this.Version; }-*/;
-	public final native void setVersion(Integer value)/*-{ this.Version = value; }-*/;
+	public final native int getVersion()/*-{ return this.Version; }-*/;
+	public final native void setVersion(int value)/*-{ this.Version = value; }-*/;
 	
-	public final native String getOutputTemplate()/*-{ return this.OutputTemplate; }-*/;
-	public final native void setOutputTemplate(String value)/*-{ this.OutputTemplate = value; }-*/;
+	public final native String getOutput()/*-{ return this.Output; }-*/;
+	public final native void setOutput(String value)/*-{ this.Output = value; }-*/;
 	
 	public final native FormTemplate getTemplate()/*-{ return this.Template; }-*/;
-	public final native void setFormTemplate(FormTemplate value)/*-{ this.Template = value; }-*/;
-	
-	public final native Date getCreatedDate()/*-{ return this.CreatedDate; }-*/;
-	public final native Date getLastUpdatedDate()/*-{ return this.LastUpdatedDate; }-*/;
+	public final native void setTemplate(FormTemplate value)/*-{ this.Template = value; }-*/;
 
 	public final native JsArray<FormField> getFields()/*-{ return this.Fields; }-*/;
 	public final native void setFields(JsArray<FormField> value)/*-{ this.Fields = value; }-*/;
@@ -52,7 +48,13 @@ public class FormRevision extends JavaScriptObject {
 		String formStatus = FormStatus.fromEnum(value);
 		jsniSetFormStatus(formStatus);
 	}
+
+	public final Date getCreatedDate() { return new Date((long)jsniGetCreatedDate()); } 
+	public final Date getLastUpdatedDate() { return new Date((long)jsniGetLastUpdatedDate()); }
+
+	private final native String jsniGetFormStatus()/*-{ return this.Status; }-*/;
+	private final native void jsniSetFormStatus(String value)/*-{ this.Status = value; }-*/;
 	
-	private final native String jsniGetFormStatus()/*-{ return this.FormStatus; }-*/;
-	private final native void jsniSetFormStatus(String value)/*-{ this.FormStatus = value; }-*/;
+	private final native double jsniGetCreatedDate() /*-{ return Date.parse(this.CreatedDate); }-*/;
+	private final native double jsniGetLastUpdatedDate() /*-{ return Date.parse(this.LastUpdatedDate); }-*/;
 }

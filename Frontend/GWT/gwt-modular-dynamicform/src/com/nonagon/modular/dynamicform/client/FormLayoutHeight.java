@@ -7,6 +7,9 @@ public enum FormLayoutHeight {
 	
 	public static FormLayoutHeight fromString(String value) {
 
+		if(value == null)
+			return WrapContent;
+		
 		return Enum.valueOf(FormLayoutHeight.class, value);
 	}
 	

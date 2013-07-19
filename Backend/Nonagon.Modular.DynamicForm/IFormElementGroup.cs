@@ -9,7 +9,7 @@ namespace Nonagon.Modular.DynamicForm
 		/// Gets or sets the layout type this element will use.
 		/// </summary>
 		/// <value>The layout type.</value>
-		FormLayoutType Layout { get; set; }
+		FormLayoutType LayoutType { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the orientation.

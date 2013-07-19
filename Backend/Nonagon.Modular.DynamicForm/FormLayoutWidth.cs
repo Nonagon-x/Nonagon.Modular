@@ -10,12 +10,12 @@ namespace Nonagon.Modular.DynamicForm
 		/// <summary>
 		/// The size is growing automatically by the children.
 		/// </summary>
-		WrapForm,
+		WrapContent,
 		
 		/// <summary>
-		/// The size adjusted to be the parent size.
+		/// The size adjusted to be the parent size (exclude parent padding and it's margin).
 		/// </summary>
-		FillParent,
+		MatchParent,
 		
 		/// <summary>
 		/// The size adjusted to be average with their sibling children.

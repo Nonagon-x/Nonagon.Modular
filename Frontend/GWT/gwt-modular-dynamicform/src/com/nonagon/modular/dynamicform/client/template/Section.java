@@ -1,7 +1,7 @@
 package com.nonagon.modular.dynamicform.client.template;
 
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.core.client.JsArray;
+import com.nonagon.modular.client.strings.LocalizedString;
 
 public class Section extends FormElementGroup {
 	
@@ -20,6 +20,6 @@ public class Section extends FormElementGroup {
 
 	protected Section() {}
 	
-	public final native JsArray<FormElement> getChildren()/*-{ return this.Children; }-*/;
-	public final native void setChildren(JsArray<FormElement> value)/*-{ this.Children = value; }-*/;
+	public final native LocalizedString getTitle()/*-{ return this.Title; }-*/;
+	public final native void setTitle(LocalizedString value)/*-{ this.Title = value; }-*/;
 }

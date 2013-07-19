@@ -21,6 +21,10 @@ namespace Nonagon.Modular.DynamicForm
 		[Alias("FormID")]
 		public Int64 Id { get; set; }
 
+		[Required]
+		[StringLength(64)]
+		public String Code { get; set; }
+
 		/// <summary>
 		/// Gets the unique reference key of Form.
 		/// </summary>
