@@ -8,7 +8,7 @@
     <ProjectGuid>{D9CCF0E7-FD49-4F69-85E2-082115AFE9BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Nonagon.Modular</RootNamespace>
-    <AssemblyName>Nonagon.Business</AssemblyName>
+    <AssemblyName>Nonagon.Modular</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -59,10 +59,10 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="ServiceStack.Interfaces">
-      <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.Interfaces.dll</HintPath>
+      <HintPath>..\..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.OrmLite">
-      <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.OrmLite.dll</HintPath>
+      <HintPath>..\..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.OrmLite.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

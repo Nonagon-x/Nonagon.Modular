@@ -110,7 +110,7 @@
       <Project>{D9CCF0E7-FD49-4F69-85E2-082115AFE9BD}</Project>
       <Name>Nonagon.Modular</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Foundation\Mono\Nonagon\Nonagon.csproj">
+    <ProjectReference Include="..\..\..\..\Foundation\Mono\Nonagon\Nonagon.csproj">
       <Project>{416A413E-FA2F-4547-BD9F-01C759BD7077}</Project>
       <Name>Nonagon</Name>
     </ProjectReference>

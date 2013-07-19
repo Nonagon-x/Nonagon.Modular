@@ -5,10 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>12.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8D4DB89E-82F3-4F73-80EC-3547ACDDB5EA}</ProjectGuid>
+    <ProjectGuid>{4FDAC1B4-580D-4388-B7FC-7D55F529A942}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Nonagon.Modular.Cms.Service</RootNamespace>
-    <AssemblyName>Nonagon.Modular.Cms.Service</AssemblyName>
+    <RootNamespace>Nonagon.Modular.DynamicForm.Service</RootNamespace>
+    <AssemblyName>Nonagon.Modular.DynamicForm.Service</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -31,40 +31,42 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="ServiceStack.ServiceInterface">
+      <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack">
       <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.OrmLite">
       <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.OrmLite.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.ServiceInterface">
-      <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.ServiceInterface.dll</HintPath>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="GetContents.cs" />
-    <Compile Include="GetContentDetails.cs" />
-    <Compile Include="DeleteContent.cs" />
-    <Compile Include="ServiceInterface\CmsService.cs" />
-    <Compile Include="StoreContent.cs" />
+    <Compile Include="ServiceInterface\DynamicFormService.cs" />
+    <Compile Include="GetFormDetails.cs" />
+    <Compile Include="GetForms.cs" />
+    <Compile Include="StoreForm.cs" />
+    <Compile Include="DeleteForm.cs" />
+    <Compile Include="StoreFormInstance.cs" />
+    <Compile Include="GetFormInstanceDetails.cs" />
+    <Compile Include="DeleteFormInstace.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="ServiceInterface\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Nonagon.Modular.Cms\Nonagon.Modular.Cms.csproj">
-      <Project>{EB7BF4B2-2DE9-4863-AA74-208C579206E7}</Project>
-      <Name>Nonagon.Modular.Cms</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Nonagon.Modular\Nonagon.Modular.csproj">
       <Project>{D9CCF0E7-FD49-4F69-85E2-082115AFE9BD}</Project>
       <Name>Nonagon.Modular</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Foundation\Mono\Nonagon\Nonagon.csproj">
+    <ProjectReference Include="..\..\..\..\Foundation\Mono\Nonagon\Nonagon.csproj">
       <Project>{416A413E-FA2F-4547-BD9F-01C759BD7077}</Project>
       <Name>Nonagon</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ServiceInterface\" />
   </ItemGroup>
 </Project>

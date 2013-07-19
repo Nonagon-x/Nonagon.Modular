@@ -52,5 +52,5 @@ Thumbs.db
 
 # Project specific #
 #######################################
-*/*/bin/Debug/*
-*/*/bin/Release/*
+*/Mono/*/bin/Debug/*
+*/Mono/*/bin/Release/*
