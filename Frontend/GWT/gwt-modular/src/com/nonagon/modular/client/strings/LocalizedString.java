@@ -19,6 +19,24 @@ public class LocalizedString extends JavaScriptObject {
 
 	protected LocalizedString() {}
 	
-	public final native String get(String culture)/*-{ return this[culture]; }-*/;
-	public final native void set(String culture, String value)/*-{ this[culture] = value; }-*/;
+	public final native String get(String culture)/*-{
+
+		if(culture.indexOf('-') <= 0 && culture.indexOf('_') <= 0) {
+			
+			culture = culture.concat('_', culture);
+		}
+		
+		culture = culture.replace('_', '-');
+		
+		return this[culture];
+		 
+	}-*/;
+	
+	public final native void set(String culture, String value)/*-{ 
+
+		culture = culture.replace('_', '-');
+		
+		this[culture] = value; 
+	
+	}-*/;
 }
