@@ -54,3 +54,4 @@ Thumbs.db
 #######################################
 */Mono/*/bin/Debug/*
 */Mono/*/bin/Release/*
+*/Mono/*/obj/*

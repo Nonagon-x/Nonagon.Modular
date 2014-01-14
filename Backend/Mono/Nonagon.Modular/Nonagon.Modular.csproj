@@ -59,16 +59,16 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="ServiceStack.Interfaces">
-      <HintPath>..\..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.Interfaces.dll</HintPath>
+      <HintPath>..\packages\ServiceStack.Common.3.9.71\lib\net35\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.OrmLite">
-      <HintPath>..\..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.OrmLite.dll</HintPath>
+      <HintPath>..\packages\ServiceStack.OrmLite.PostgreSQL.3.9.71\lib\net35\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite">
+      <HintPath>..\packages\ServiceStack.OrmLite.MySql.3.9.71\lib\net35\ServiceStack.OrmLite.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Foundation\Mono\Nonagon\Nonagon.csproj">
-      <Project>{416A413E-FA2F-4547-BD9F-01C759BD7077}</Project>
-      <Name>Nonagon</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
