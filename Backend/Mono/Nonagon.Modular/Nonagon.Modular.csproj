@@ -9,7 +9,6 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Nonagon.Modular</RootNamespace>
     <AssemblyName>Nonagon.Modular</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>True</DebugSymbols>
@@ -64,11 +63,18 @@
     <Reference Include="ServiceStack.OrmLite">
       <HintPath>..\packages\ServiceStack.OrmLite.PostgreSQL.3.9.71\lib\net35\ServiceStack.OrmLite.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.OrmLite">
-      <HintPath>..\packages\ServiceStack.OrmLite.PostgreSQL.3.9.71\lib\net35\ServiceStack.OrmLite.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Nonagon.Foundation\Mono\Nonagon\Nonagon.csproj">
+      <Project>{416A413E-FA2F-4547-BD9F-01C759BD7077}</Project>
+      <Name>Nonagon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Nonagon.Geo\Mono\Nonagon.Geo\Nonagon.Geo.csproj">
+      <Project>{A7E59EC8-80D5-433F-BE02-1259C50F9A27}</Project>
+      <Name>Nonagon.Geo</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
