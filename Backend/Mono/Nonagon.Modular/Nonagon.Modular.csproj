@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D9CCF0E7-FD49-4F69-85E2-082115AFE9BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Nonagon.Modular</RootNamespace>
