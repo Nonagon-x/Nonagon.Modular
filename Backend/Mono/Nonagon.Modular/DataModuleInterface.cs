@@ -13,7 +13,7 @@ namespace Nonagon.Modular
 		/// <value>The db connection factory.</value>
 		public IDbConnectionFactory DbConnectionFactory { get; private set; }
 
-		public DataModuleInterface(IDbConnectionFactory dbConnectionFactory)
+		protected DataModuleInterface(IDbConnectionFactory dbConnectionFactory)
 		{
 			DbConnectionFactory = dbConnectionFactory;
 		}
@@ -26,8 +26,9 @@ namespace Nonagon.Modular
 		{
 			TOperation opt = base.Resolve<TOperation>();
 
-			if(opt is IDataModuleOperation)
-				(opt as IDataModuleOperation).DbConnectionFactory = DbConnectionFactory;
+			var iDataModuleOperation = opt as IDataModuleOperation;
+			if(iDataModuleOperation != null)
+				iDataModuleOperation.DbConnectionFactory = DbConnectionFactory;
 
 			return opt;
 		}

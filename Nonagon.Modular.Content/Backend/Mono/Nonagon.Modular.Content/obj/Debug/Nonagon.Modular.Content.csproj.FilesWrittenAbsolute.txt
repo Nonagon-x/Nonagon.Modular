@@ -1,0 +1,16 @@
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/Nonagon.Modular.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/Nonagon.Modular.dll.mdb
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/Nonagon.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/Nonagon.dll.mdb
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/ServiceStack.Interfaces.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/Nonagon.Modular.Cms.dll.mdb
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/Nonagon.Modular.Cms.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/obj/Debug/Nonagon.Modular.Cms.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/obj/Debug/Nonagon.Modular.Cms.dll.mdb
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/ServiceStack.OrmLite.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/ServiceStack.Text.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/ServiceStack.Common.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/Nonagon.Modular.Content.dll.mdb
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/bin/Debug/Nonagon.Modular.Content.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/obj/Debug/Nonagon.Modular.Content.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular.Content/Backend/Mono/Nonagon.Modular.Content/obj/Debug/Nonagon.Modular.Content.dll.mdb

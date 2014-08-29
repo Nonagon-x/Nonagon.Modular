@@ -3,13 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D9CCF0E7-FD49-4F69-85E2-082115AFE9BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Nonagon.Modular</RootNamespace>
     <AssemblyName>Nonagon.Modular</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>True</DebugSymbols>
@@ -49,6 +48,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strings\LocalizedString.cs" />
     <Compile Include="Params\ListOperationParam.cs" />
+    <Compile Include="MediaStreamAttribute.cs" />
+    <Compile Include="OperationListener.cs" />
+    <Compile Include="IOperationListener.cs" />
+    <Compile Include="MetaDataAttribute %28copy%29.cs" />
+    <Compile Include="TextAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -58,11 +62,30 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
+    <Reference Include="ServiceStack">
+      <HintPath>..\packages\ServiceStack.3.9.71\lib\net35\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\packages\ServiceStack.Common.3.9.71\lib\net35\ServiceStack.Common.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Interfaces">
-      <HintPath>..\..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.Interfaces.dll</HintPath>
+      <HintPath>..\packages\ServiceStack.Common.3.9.71\lib\net35\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.OrmLite">
-      <HintPath>..\..\..\Lib\ServiceStack 3.9.44.0\ServiceStack.OrmLite.dll</HintPath>
+      <HintPath>..\packages\ServiceStack.OrmLite.MySql.3.9.71\lib\net35\ServiceStack.OrmLite.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Nonagon.Foundation\Mono\Nonagon\Nonagon.csproj">
+      <Project>{416A413E-FA2F-4547-BD9F-01C759BD7077}</Project>
+      <Name>Nonagon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Nonagon.Geo\Mono\Nonagon.Geo\Nonagon.Geo.csproj">
+      <Project>{A7E59EC8-80D5-433F-BE02-1259C50F9A27}</Project>
+      <Name>Nonagon.Geo</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
