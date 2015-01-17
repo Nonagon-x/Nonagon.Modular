@@ -36,6 +36,14 @@ namespace Nonagon.Modular
 		}
 
 		/// <summary>
+		/// Register the module.
+		/// </summary>
+		public virtual void Register()
+		{
+			// To be overidden.
+		}
+
+		/// <summary>
 		/// Gets the module interface.
 		/// </summary>
 		/// <returns>The module interface.</returns>

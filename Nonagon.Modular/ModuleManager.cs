@@ -9,9 +9,9 @@ namespace Nonagon.Modular
 	/// <summary>
 	/// Module manager.
 	/// </summary>
-	public class ModuleManager
+	public static class ModuleManager
 	{
-		private static Dictionary<Type, IModule> _loadedModules = new Dictionary<Type, IModule>();
+		private static readonly Dictionary<Type, IModule> _loadedModules = new Dictionary<Type, IModule>();
 
 		/// <summary>
 		/// Tells Nonagon Modular to load the module in memory and also initialize the module.
@@ -33,7 +33,7 @@ namespace Nonagon.Modular
 		{
 			// Check if module is already created or not, if so, use existing one.
 			if(_loadedModules.ContainsKey(typeof(T)))
-			   return (T)_loadedModules[typeof(T)];
+				return (T)_loadedModules[typeof(T)];
 
 			ConstructorInfo constructor;
 			Object[] constructorParams;
@@ -47,7 +47,7 @@ namespace Nonagon.Modular
 				if(constructor == null)
 				{
 					throw new ArgumentException("The " + typeof(T).Name + 
-					                            " require dbConnectionFactory parameter to load.");
+						" require dbConnectionFactory parameter to load.");
 				}
 
 				constructorParams = null;
@@ -56,12 +56,12 @@ namespace Nonagon.Modular
 			{
 				constructor = typeof(T).GetConstructor(
 					BindingFlags.NonPublic | BindingFlags.Instance, 
-					null, new Type[] { typeof(IDbConnectionFactory) }, null);
+					null, new [] { typeof(IDbConnectionFactory) }, null);
 
 				if(constructor == null)
 				{
 					throw new ArgumentException("The " + typeof(T).Name + 
-					                            " does not require any parameters.");
+						" does not require any parameters.");
 				}
 
 				constructorParams = new [] { dbConnectionFactory };
@@ -74,6 +74,8 @@ namespace Nonagon.Modular
 
 			if(!module.IsUpToDate())
 				module.Update();
+
+			module.Register();
 
 			// Put the created module to be referenced as singleton.
 			_loadedModules[typeof(T)] = module;

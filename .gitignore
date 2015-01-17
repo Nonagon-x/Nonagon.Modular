@@ -36,22 +36,14 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-# Eclipse project specific #
-############################
-.metadata/*
-
-# Android package specific #
-############################
-*.apk
-*/bin/*
-*/gen/*
-
 # Visual Studio / MonoDevelop specific #
 #######################################
 *.userprefs
 
 # Project specific #
 #######################################
-*/Mono/*/bin/Debug/*
-*/Mono/*/bin/Release/*
-*/Mono/*/obj/*
+*/bin/Debug/*
+*/bin/Release/*
+*/obj/*
+
+*/obj/x86/Debug

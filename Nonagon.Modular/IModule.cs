@@ -28,6 +28,11 @@ namespace Nonagon.Modular
 		/// Update this module.
 		/// </summary>
 		void Update();
+
+		/// <summary>
+		/// Register the module.
+		/// </summary>
+		void Register();
 	}
 
 	/// <summary>
