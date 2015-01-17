@@ -1,0 +1,9 @@
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular/bin/Debug/Nonagon.Modular.dll.mdb
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular/bin/Debug/Nonagon.Modular.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular/obj/x86/Debug/Nonagon.Modular.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular/obj/x86/Debug/Nonagon.Modular.dll.mdb
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular/bin/Debug/ServiceStack.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular/bin/Debug/ServiceStack.Common.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular/bin/Debug/ServiceStack.Interfaces.dll
+/Users/NonGT/Projects/Nonagon/Modular/Nonagon.Modular/bin/Debug/ServiceStack.OrmLite.dll
